@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadStatus", "RoadStatus\Ro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatus.Test", "RoadStatus.Test\RoadStatus.Test.csproj", "{8B43B8B2-0BD1-4554-8018-CD571F17F2EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatus.Core", "RoadStatus.Core\RoadStatus.Core.csproj", "{B1B3EC32-E502-4F5B-8D97-3DFB5619ADF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8B43B8B2-0BD1-4554-8018-CD571F17F2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B43B8B2-0BD1-4554-8018-CD571F17F2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B43B8B2-0BD1-4554-8018-CD571F17F2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1B3EC32-E502-4F5B-8D97-3DFB5619ADF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B3EC32-E502-4F5B-8D97-3DFB5619ADF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B3EC32-E502-4F5B-8D97-3DFB5619ADF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B3EC32-E502-4F5B-8D97-3DFB5619ADF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
