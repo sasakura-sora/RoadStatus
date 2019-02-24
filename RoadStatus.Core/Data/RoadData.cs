@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RoadStatus.Core.Data
+﻿namespace RoadStatus.Core.Data
 {
     public class RoadData
     {

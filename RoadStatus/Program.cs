@@ -16,14 +16,13 @@ namespace RoadStatus
                 Console.WriteLine("Please provide a road id");
                 return 2;
             }
-                       
 
            //Setup DI in a console app as it's not provided
             var serviceProvider = new ServiceCollection()            
-            .AddSingleton<IConfig, Config>()
-            .AddSingleton<IRoadService, RoadService>()
-            .AddSingleton<ITflClient, TflClient>()
-            .BuildServiceProvider();
+                .AddSingleton<IConfig, Config>()
+                .AddTransient<IRoadService, RoadService>()
+                .AddTransient<ITflClient, TflClient>()
+                .BuildServiceProvider();
 
             var roadService = serviceProvider.GetService<IRoadService>();
             var roadId = args[0];

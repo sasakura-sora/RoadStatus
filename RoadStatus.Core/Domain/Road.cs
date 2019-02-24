@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RoadStatus.Core.Domain
+﻿namespace RoadStatus.Core.Domain
 {
     public class Road
     {
@@ -22,10 +20,8 @@ namespace RoadStatus.Core.Domain
             this.description = description;
         }
 
-        public String Name { get { return name; } }
-
-        public String Status { get { return status; } }
-
-        public String Description { get { return description; } }
+        public string Name => name;
+        public string Status => status;
+        public string Description => description;
     }
 }

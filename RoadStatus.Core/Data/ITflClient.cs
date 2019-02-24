@@ -1,6 +1,4 @@
-﻿using RoadStatus.Core.Data;
-using RoadStatus.Core.Domain;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace RoadStatus.Core.Data
 {

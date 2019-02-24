@@ -9,7 +9,7 @@ namespace RoadStatus.Core
         public Config()
         {
             var builder = new ConfigurationBuilder()
-            .AddJsonFile($"appsettings.json", true, true);
+            .AddJsonFile("appsettings.json", true, true);
 
             config = builder.Build();
         }

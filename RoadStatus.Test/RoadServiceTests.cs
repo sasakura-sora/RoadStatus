@@ -1,12 +1,8 @@
 ﻿using Moq;
 using NUnit.Framework;
-using RoadStatus.Core;
 using RoadStatus.Core.Data;
 using RoadStatus.Core.Domain;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace RoadStatus.Test

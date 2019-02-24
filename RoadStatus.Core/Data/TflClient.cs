@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using RoadStatus.Core.Domain;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -11,8 +10,8 @@ namespace RoadStatus.Core.Data
     {
         private HttpClient client;
 
-        private string appId;
-        private string devKey;
+        private readonly string appId;
+        private readonly string devKey;
 
         public TflClient(IConfig config)
         {
@@ -27,7 +26,7 @@ namespace RoadStatus.Core.Data
 
         public async Task<RoadData> Get(string roadId)
         {
-            var roadUri = new Uri($"/Road/{roadId}{BuildQueryString()}", uriKind: UriKind.Relative);
+            var roadUri = new Uri($"/Road/{roadId}{BuildQueryString()}", UriKind.Relative);
 
             var data = await client.GetAsync(roadUri);
 

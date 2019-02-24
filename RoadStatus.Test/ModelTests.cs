@@ -1,8 +1,5 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
 
 namespace RoadStatus.Test
 {
@@ -13,7 +10,7 @@ namespace RoadStatus.Test
         [Test]
         public void GivenRoadModel_Exists()
         {
-            var model = new RoadStatus.Core.Domain.Road();
+            var model = new Core.Domain.Road();
 
             Assert.IsNotNull(model);
         }
@@ -21,7 +18,7 @@ namespace RoadStatus.Test
         [Test]
         public void GivenDefaultModel_RoadName_IsUndefined()
         {
-            var model = new RoadStatus.Core.Domain.Road();
+            var model = new Core.Domain.Road();
 
             Assert.AreEqual(string.Empty, model.Name);
         }
@@ -31,7 +28,7 @@ namespace RoadStatus.Test
         {
             const string Name = "A2";
 
-            var model = new RoadStatus.Core.Domain.Road(Name, "", "");
+            var model = new Core.Domain.Road(Name, "", "");
 
             Assert.AreEqual(Name, model.Name);
         }
@@ -39,7 +36,7 @@ namespace RoadStatus.Test
         [Test]
         public void GivenDefaultModel_RoadStatus_IsUndefined()
         {
-            var model = new RoadStatus.Core.Domain.Road();
+            var model = new Core.Domain.Road();
 
             Assert.AreEqual(string.Empty, model.Status);
         }
@@ -49,7 +46,7 @@ namespace RoadStatus.Test
         {
             const string Status = "Good";
 
-            var model = new RoadStatus.Core.Domain.Road("", Status, "");
+            var model = new Core.Domain.Road("", Status, "");
 
             Assert.AreEqual(Status, model.Status);
         }
@@ -58,7 +55,7 @@ namespace RoadStatus.Test
         [Test]
         public void GivenDefaultModel_RoadDescription_IsUndefined()
         {
-            var model = new RoadStatus.Core.Domain.Road();
+            var model = new Core.Domain.Road();
 
             Assert.AreEqual(string.Empty, model.Description);
         }
@@ -68,7 +65,7 @@ namespace RoadStatus.Test
         {
             const string Description = "No Exceptional Delays";
 
-            var model = new RoadStatus.Core.Domain.Road("", "", Description);
+            var model = new Core.Domain.Road("", "", Description);
 
             Assert.AreEqual(Description, model.Description);
         }
