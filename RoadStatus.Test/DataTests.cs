@@ -1,5 +1,7 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using System.Diagnostics.CodeAnalysis;
+using System.Net.Http;
 
 namespace RoadStatus.Test
 {
@@ -7,12 +9,15 @@ namespace RoadStatus.Test
     [TestFixture]
     public class DataTests
     {
-
         [Test]
         public void GivenURL_ReturnsData()
         {
             //Arrange
-            var data = new RoadStatus.Core.Data();
+            var client = new Mock<HttpClient>();
+            var response = new HttpResponseMessage() { Content = new StringContent("") };
+            client.Setup(c => c.GetAsync("A2")).ReturnsAsync(response);
+
+            var data = new RoadStatus.Core.Data(client.Object);
 
             //Act
             var result = data.Get("A2");
