@@ -11,11 +11,11 @@ namespace RoadStatus.Core.Data
         private string appId;
         private string devKey;
 
-        public TflClient(HttpClient client, string appId, string developerKey)
+        public TflClient(HttpClient client, IConfig config)
         {
             this.client = client;
-            this.appId = appId;
-            this.devKey = developerKey;
+            this.appId = config.AppId();
+            this.devKey = config.DeveloperId();
         }
 
         public RoadData Get(string roadId)
