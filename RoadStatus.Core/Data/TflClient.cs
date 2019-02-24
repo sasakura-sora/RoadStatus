@@ -1,5 +1,7 @@
-﻿using RoadStatus.Core.Domain;
+﻿using Newtonsoft.Json;
+using RoadStatus.Core.Domain;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -29,12 +31,29 @@ namespace RoadStatus.Core.Data
 
             var data = await client.GetAsync(roadUri);
 
-            return new RoadData();
+            if(data.IsSuccessStatusCode == false)
+            {
+                return null;
+            }
+
+            return DeSeralize(await data.Content.ReadAsStringAsync());            
         }
 
         public string BuildQueryString()
         {
             return $"?app_id={appId}&app_key={devKey}";
+        }
+
+        public RoadData DeSeralize(string message)
+        {
+            var data = JsonConvert.DeserializeObject<List<RoadData>>(message);
+
+            if(data == null || data.Count == 0)
+            {
+                return null;
+            }
+
+            return data[0];
         }
     }
 }
