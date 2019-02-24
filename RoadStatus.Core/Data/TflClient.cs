@@ -11,9 +11,11 @@ namespace RoadStatus.Core.Data
         private string appId;
         private string devKey;
 
-        public TflClient(HttpClient client, IConfig config)
+        public TflClient(IConfig config)
         {
-            this.client = client;
+            this.client = new HttpClient();
+            this.client.BaseAddress = new Uri("https://api.tfl.gov.uk");
+
             this.appId = config.AppId();
             this.devKey = config.DeveloperId();
         }
