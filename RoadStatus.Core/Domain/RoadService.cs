@@ -2,7 +2,7 @@
 
 namespace RoadStatus.Core.Domain
 {
-    public class RoadService
+    public class RoadService : IRoadService
     {
         private readonly ITflClient data;
 
