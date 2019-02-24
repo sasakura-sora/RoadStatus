@@ -2,29 +2,29 @@
 using System;
 using System.Net.Http;
 
-namespace RoadStatus.Core
+namespace RoadStatus.Core.Data
 {
-    public class Data
+    public class TflClient : ITflClient
     {
         private HttpClient client;
 
         private string appId;
         private string devKey;
 
-        public Data(HttpClient client, string appId, string developerKey)
+        public TflClient(HttpClient client, string appId, string developerKey)
         {
             this.client = client;
             this.appId = appId;
             this.devKey = developerKey;
         }
 
-        public Road Get(string roadId)
+        public RoadData Get(string roadId)
         {
             var roadUri = new Uri($"/Road/{roadId}{BuildQueryString()}");
 
             var data = client.GetAsync(roadUri);
 
-            return new Road();
+            return new RoadData();
         }
 
         public string BuildQueryString()

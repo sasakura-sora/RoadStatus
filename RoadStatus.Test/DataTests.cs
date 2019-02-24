@@ -1,5 +1,6 @@
 ﻿using Moq;
 using NUnit.Framework;
+using RoadStatus.Core.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 
@@ -15,7 +16,7 @@ namespace RoadStatus.Test
             //Arrange
             var client = new HttpClient();
 
-            var data = new RoadStatus.Core.Data(client, "", "");
+            var data = new TflClient(client, "", "");
 
             //Act
             var result = data.Get("A2");
@@ -30,7 +31,7 @@ namespace RoadStatus.Test
             //Arrange
             var client = new HttpClient();
 
-            var data = new RoadStatus.Core.Data(client, "", "");
+            var data = new TflClient(client, "", "");
 
             //Act
             var result = data.Get("A233");
@@ -42,7 +43,7 @@ namespace RoadStatus.Test
         [Test]
         public void GivenId_BuildQuerystring_IsValid()
         {
-            var data = new RoadStatus.Core.Data(null, "123", "test_key");
+            var data = new TflClient(null, "123", "test_key");
 
 
             var result = data.BuildQueryString();
