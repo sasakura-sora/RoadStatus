@@ -1,7 +1,4 @@
 ﻿using RoadStatus.Core.Data;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RoadStatus.Core.Domain
 {
@@ -23,7 +20,7 @@ namespace RoadStatus.Core.Domain
                 return null;
             }
 
-            return new Road();
+            return new Road(road.displayName, road.statusSeverity, road.statusSeverityDescription);
         }
     }
 }
