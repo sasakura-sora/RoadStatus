@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoadStatus.Core.Domain;
+using System;
 using System.Net.Http;
 
 namespace RoadStatus.Core
@@ -10,9 +11,9 @@ namespace RoadStatus.Core
 
         }
 
-        public object Get(string v)
+        public Road Get(string roadId)
         {
-            throw new NotImplementedException();
+            return new Road();
         }
     }
 }
