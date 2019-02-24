@@ -3,12 +3,13 @@ using RoadStatus.Core;
 using RoadStatus.Core.Data;
 using RoadStatus.Core.Domain;
 using System;
+using System.Threading.Tasks;
 
 namespace RoadStatus
 {
     class Program
     {
-        static int Main(string[] args)
+        static async Task<int> Main(string[] args)
         {
             if(args == null || args.Length == 0)
             {
@@ -27,7 +28,7 @@ namespace RoadStatus
             var roadService = serviceProvider.GetService<IRoadService>();
             var roadId = args[0];
 
-            var road = roadService.GetStatus(roadId);
+            var road = await roadService.GetStatus(roadId);
             
             if(road == null)
             {

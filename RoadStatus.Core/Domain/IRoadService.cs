@@ -1,7 +1,9 @@
-﻿namespace RoadStatus.Core.Domain
+﻿using System.Threading.Tasks;
+
+namespace RoadStatus.Core.Domain
 {
     public interface IRoadService
     {
-        Road GetStatus(string roadId);
+        Task<Road> GetStatus(string roadId);
     }
 }

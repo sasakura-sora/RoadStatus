@@ -1,6 +1,7 @@
 ﻿using RoadStatus.Core.Domain;
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace RoadStatus.Core.Data
 {
@@ -13,18 +14,20 @@ namespace RoadStatus.Core.Data
 
         public TflClient(IConfig config)
         {
-            this.client = new HttpClient();
-            this.client.BaseAddress = new Uri("https://api.tfl.gov.uk");
+            this.client = new HttpClient
+            {
+                BaseAddress = new Uri("https://api.tfl.gov.uk")
+            };
 
             this.appId = config.AppId();
             this.devKey = config.DeveloperId();
         }
 
-        public RoadData Get(string roadId)
+        public async Task<RoadData> Get(string roadId)
         {
-            var roadUri = new Uri($"/Road/{roadId}{BuildQueryString()}");
+            var roadUri = new Uri($"/Road/{roadId}{BuildQueryString()}", uriKind: UriKind.Relative);
 
-            var data = client.GetAsync(roadUri);
+            var data = await client.GetAsync(roadUri);
 
             return new RoadData();
         }

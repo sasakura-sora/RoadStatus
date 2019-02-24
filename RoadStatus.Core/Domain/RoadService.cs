@@ -1,4 +1,5 @@
 ﻿using RoadStatus.Core.Data;
+using System.Threading.Tasks;
 
 namespace RoadStatus.Core.Domain
 {
@@ -11,9 +12,9 @@ namespace RoadStatus.Core.Domain
             this.data = data;
         }
 
-        public Road GetStatus(string roadId)
+        public async Task<Road> GetStatus(string roadId)
         {
-            var road = data.Get(roadId);
+            var road =  await data.Get(roadId);
 
             if (road == null)
             {
