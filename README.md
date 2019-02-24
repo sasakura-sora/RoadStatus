@@ -7,19 +7,19 @@ To run you will need .Net Core installed on your machine
 Either build in Visual Studio using the solution file RoadStatus.sln as normal or
 
 Open a command prompt and navigate to the solution directory then run
-    dotnet restore
-	dotnet build
+`dotnet restore`
+`dotnet build`
 
 
 # How to run
 
 This is a dotnet Core project so no .exe is created by default.  Run the application
 from the project folder /RoadStatus (not the solution root) by using
-    dotnet run A2
+`dotnet run A2`
 
 To run the code copy the contents of the /bin/Debug/netcoreapp2.1 folder to your
 location and run
-    dotnet RoadStatus.dll A2
+`dotnet RoadStatus.dll A2`
 
 Configuration is held in the appsettings.json file and must be added for it to run.
 The API returns a 200 when no credentials are supplied not the expected 403.
