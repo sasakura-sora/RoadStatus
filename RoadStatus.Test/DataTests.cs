@@ -19,7 +19,6 @@ namespace RoadStatus.Test
 
             var data = new TflClient(config.Object);
 
-
             var result = data.BuildQueryString();
 
             Assert.AreEqual("?app_id=123&app_key=test_key", result);
