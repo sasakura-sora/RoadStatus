@@ -15,7 +15,7 @@ namespace RoadStatus.Test
             //Arrange
             var client = new HttpClient();
 
-            var data = new RoadStatus.Core.Data(client);
+            var data = new RoadStatus.Core.Data(client, "", "");
 
             //Act
             var result = data.Get("A2");
@@ -23,5 +23,32 @@ namespace RoadStatus.Test
             //Assert
             Assert.IsNotNull(result);
         }
+
+        [Test]
+        public void GivenBadUrl_ReturnsNull()
+        {
+            //Arrange
+            var client = new HttpClient();
+
+            var data = new RoadStatus.Core.Data(client, "", "");
+
+            //Act
+            var result = data.Get("A233");
+
+            //Assert
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public void GivenId_BuildQuerystring_IsValid()
+        {
+            var data = new RoadStatus.Core.Data(null, "123", "test_key");
+
+
+            var result = data.BuildQueryString();
+
+            Assert.AreEqual("?app_id=123&app_key=test_key", result);
+        }
+
     }
 }
